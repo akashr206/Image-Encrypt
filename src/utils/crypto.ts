@@ -23,7 +23,7 @@ const deriveKey = async (passwordKey: CryptoKey, salt: Uint8Array) => {
   return await window.crypto.subtle.deriveKey(
     {
       name: "PBKDF2",
-      salt: salt,
+      salt: salt as any,
       iterations: 100000,
       hash: "SHA-256",
     },
